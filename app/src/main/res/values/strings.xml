@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">MasterBean</string>
+    <string name="bottom_home">首页</string>
+    <string name="bottom_channel">频道</string>
+    <string name="bottom_search">发现</string>
+    <string name="bottom_my">我的</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="home_input_tip">请输入关键词</string>
+</resources>
