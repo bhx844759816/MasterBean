@@ -1,4 +1,4 @@
-package com.bhx.common_select_city;
+package com.bhx.selectcity;
 
 import org.junit.Test;
 

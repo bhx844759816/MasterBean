@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -9,7 +10,7 @@
     <RelativeLayout
         android:id="@+id/id_home_topBar"
         android:layout_width="match_parent"
-        android:layout_height="?actionBarSize"
+        android:layout_height="wrap_content"
         android:background="@color/topBar_background"
         android:gravity="center_vertical"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -22,18 +23,19 @@
             android:layout_centerVertical="true"
             android:layout_margin="15dp"
             android:drawableStart="@drawable/icon_location"
-            android:drawablePadding="5dp"
+            android:gravity="center_vertical"
             android:textColor="@color/white"
+            android:text="郑州"
             tools:text="郑州" />
 
         <TextView
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:layout_centerInParent="true"
-            android:layout_marginStart="40dp"
-            android:layout_marginTop="12dp"
-            android:layout_marginEnd="40dp"
-            android:layout_marginBottom="12dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginBottom="5dp"
             android:layout_toStartOf="@+id/id_home_message"
             android:layout_toEndOf="@+id/id_home_location"
             android:background="@drawable/drawable_half_circle_rect"
@@ -43,7 +45,8 @@
             android:paddingStart="20dp"
             android:paddingEnd="20dp"
             android:text="@string/home_input_tip"
-            android:textColor="@color/white" />
+            android:textColor="@color/white"
+            android:textSize="@dimen/sp_12" />
 
         <ImageView
             android:id="@+id/id_home_message"
@@ -55,13 +58,12 @@
             android:background="@drawable/icon_message" />
 
     </RelativeLayout>
-    <android.support.v7.widget.RecyclerView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        app:layout_constraintTop_toBottomOf="@id/id_home_topBar"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        />
 
+    <com.bhx.common.ui.recyclerview.RefreshRecyclerView
+        android:id="@+id/id_refresh_recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/id_home_topBar" />
 
 </android.support.constraint.ConstraintLayout>

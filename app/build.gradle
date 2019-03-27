@@ -26,9 +26,13 @@ android {
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation project(':common_base')
+    implementation project(':common_ui')
+    implementation project(':common_select_city')
     //butterknife
     implementation thirdLibrarys.butterknife
+    implementation 'com.android.support.constraint:constraint-layout:1.1.3'
     annotationProcessor thirdLibrarys.butterknifeCompiler
     implementation thirdLibrarys.banner
+    implementation thirdLibrarys.banner2
 
 }

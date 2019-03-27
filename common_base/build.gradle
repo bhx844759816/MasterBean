@@ -46,6 +46,7 @@ dependencies {
     api thirdLibrarys.rxAndroid
     api thirdLibrarys.logger
     api thirdLibrarys.rxlifecycle
+    api thirdLibrarys.glide
 
 
 }

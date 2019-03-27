@@ -4,16 +4,19 @@
     <item
         android:id="@+id/item_bottom_home"
         android:checkable="true"
-        app:showAsAction=""
+        android:icon="@drawable/icon_bottom_home_default"
         android:title="@string/bottom_home" />
     <item
         android:id="@+id/item_bottom_channel"
+        android:icon="@drawable/icon_bottom_channel_default"
         android:title="@string/bottom_channel" />
     <item
         android:id="@+id/item_bottom_search"
+        android:icon="@drawable/icon_bottom_search_default"
         android:title="@string/bottom_search" />
     <item
         android:id="@+id/item_bottom_my"
+        android:icon="@drawable/icon_bottom_my_default"
         android:title="@string/bottom_my" />
 
 </menu>

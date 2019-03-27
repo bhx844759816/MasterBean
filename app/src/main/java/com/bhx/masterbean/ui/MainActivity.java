@@ -38,7 +38,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void initView() {
-//        initFragment();
+        showHomeFragment();
         mNavigationView.setOnNavigationItemSelectedListener(menuItem -> {
             int id = menuItem.getItemId();
             switch (id) {

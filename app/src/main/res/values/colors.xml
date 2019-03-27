@@ -10,4 +10,8 @@
     <color name="bottom_navigation_background">#f6f6f6</color>
     <color name="topBar_background">#013453</color>
     <color name="white">#ffffff</color>
+    <color name="EditText_Hint_Color">#707070</color>
+    <color name="text_gray">#707070</color>
+    <color name="home_small_text_color">#1b2d36</color>
+
 </resources>

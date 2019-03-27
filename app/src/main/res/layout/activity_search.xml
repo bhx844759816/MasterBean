@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.SearchActivity">
+
+    <LinearLayout
+        android:id="@+id/id_search_topBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/topBar_background"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/id_search_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="15dp"
+            android:background="@drawable/icon_back"
+            android:gravity="center_vertical" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="35dp"
+            android:layout_weight="11"
+            android:background="@drawable/drawable_half_circle_rect"
+            android:gravity="center_vertical">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:background="@drawable/icon_search" />
+
+            <EditText
+                android:layout_width="0dp"
+                android:layout_weight="11"
+                android:layout_height="wrap_content"
+                android:hint="请输入搜索内容"
+                android:textColor="@color/white"
+                android:textColorHint="@color/EditText_Hint_Color"
+                android:textSize="@dimen/search_edit_text_size" />
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="10dp"
+                android:background="@drawable/icon_search_input_clear"/>
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="15dp"
+            android:text="搜索"
+            android:textColor="@color/white"
+            android:textSize="@dimen/search_text_size" />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/id_hot_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:text="热门标签"
+        android:textColor="@color/EditText_Hint_Color"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/id_search_topBar" />
+
+    <com.bhx.common.ui.widget.FlowLayout
+        android:id="@+id/id_hot_label_flowLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        app:layout_constraintLeft_toLeftOf="@id/id_hot_label"
+        app:layout_constraintTop_toBottomOf="@id/id_hot_label" />
+
+    <TextView
+        android:id="@+id/id_hot_history"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:text="搜索历史"
+        android:textColor="@color/EditText_Hint_Color"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/id_hot_label_flowLayout" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:background="@drawable/icon_delete_history_label"
+        app:layout_constraintBottom_toBottomOf="@id/id_hot_history"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@id/id_hot_history" />
+
+    <com.bhx.common.ui.widget.FlowLayout
+        android:id="@+id/id_hot_history_flowLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        app:layout_constraintLeft_toLeftOf="@id/id_hot_history"
+        app:layout_constraintTop_toBottomOf="@id/id_hot_history" />
+
+</android.support.constraint.ConstraintLayout>
