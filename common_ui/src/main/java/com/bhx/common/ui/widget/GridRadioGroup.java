@@ -9,7 +9,6 @@ import android.widget.RadioGroup;
 
 import com.bhx.common.ui.R;
 
-@SuppressLint("CustomViewStyleable")
 public class GridRadioGroup extends RadioGroup {
     private static final int VERTICAL_SPACING_DIP = 15;
 

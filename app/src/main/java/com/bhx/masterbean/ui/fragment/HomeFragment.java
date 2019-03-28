@@ -69,6 +69,9 @@ public class HomeFragment extends Fragment {
         return view;
     }
 
+    /**
+     * 初始化View
+     */
     private void initView() {
         mBannerRes = new ArrayList<>();
         mHomeModeList = new ArrayList<>();
@@ -81,6 +84,7 @@ public class HomeFragment extends Fragment {
         mRefreshRecyclerView.addRefreshViewCreator(new DefaultRefreshViewCreator());
         mRefreshRecyclerView.addHeaderView(mzBannerView);
     }
+
 
     /**
      * 初始化Banner
@@ -131,6 +135,9 @@ public class HomeFragment extends Fragment {
         }
     }
 
+    /**
+     * Banner得视图绑定模块
+     */
     public static class BannerViewHolder implements MZViewHolder<Integer> {
         private ImageView mImageView;
 

@@ -12,6 +12,8 @@
     <color name="white">#ffffff</color>
     <color name="EditText_Hint_Color">#707070</color>
     <color name="text_gray">#707070</color>
+    <color name="text_default">#151515</color>
+    <color name="gray_shallow">#f0f0f0</color>
     <color name="home_small_text_color">#1b2d36</color>
 
 </resources>

@@ -9,16 +9,14 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.RadioGroup;
 
 import com.bhx.common.ui.recyclerview.DefaultRefreshViewCreator;
 import com.bhx.common.ui.recyclerview.RefreshRecyclerView;
-import com.bhx.common.ui.widget.GridRadioGroup;
 import com.bhx.common.utils.DensityUtil;
-import com.bhx.common.utils.ToastUtils;
 import com.bhx.masterbean.R;
 import com.bhx.masterbean.adapter.HomeAdapter;
 import com.bhx.masterbean.model.HomeModel;
+import com.bhx.masterbean.utils.DefaultItemDecoration;
 import com.bhx.masterbean.utils.SpacesItemDecoration;
 
 import java.util.ArrayList;
@@ -29,14 +27,13 @@ import butterknife.ButterKnife;
 import butterknife.Unbinder;
 
 /**
- * 频道
+ * 收藏界面
  */
-public class ChannelFragment extends Fragment {
+public class CollectionFragment extends Fragment {
 
-    @BindView(R.id.id_channel_refresh_recyclerView)
+    @BindView(R.id.id_collection_recyclerView)
     RefreshRecyclerView mRecyclerView;
     Unbinder unbinder;
-    private GridRadioGroup mRadioGroup;
     private Context mContext;
     private List<HomeModel> mHomeModeList;
 
@@ -49,58 +46,28 @@ public class ChannelFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_channel, container, false);
-        mRadioGroup = (GridRadioGroup) inflater.inflate(R.layout.view_channel_top_item, container, false);
-        initView(view);
+        View view = inflater.inflate(R.layout.fragment_collection, container, false);
+        unbinder = ButterKnife.bind(this, view);
+        initView();
         return view;
     }
 
-    /**
-     * 绑定View
-     *
-     * @param view
-     */
-    private void initView(View view) {
-        unbinder = ButterKnife.bind(this, view);
+    private void initView() {
         mHomeModeList = new ArrayList<>();
         initTestData();
         mRecyclerView.setLayoutManager(new LinearLayoutManager(mContext, LinearLayoutManager.VERTICAL, false));
-        mRecyclerView.addItemDecoration(new SpacesItemDecoration(DensityUtil.dip2px(mContext, 10)));
+        mRecyclerView.addItemDecoration(new DefaultItemDecoration(DensityUtil.dip2px(mContext, 10)));
         mRecyclerView.setAdapter(new HomeAdapter(mContext, mHomeModeList));
         mRecyclerView.addRefreshViewCreator(new DefaultRefreshViewCreator());
-        mRecyclerView.addHeaderView(mRadioGroup);
-        mRadioGroup.check(R.id.id_channel_grid_item_learn);
-        mRadioGroup.setOnCheckedChangeListener((group, checkedId) -> {
-            switch (checkedId) {
-                case R.id.id_channel_grid_item_learn: //学习交流
-                    ToastUtils.toastShort("学习交流");
-                    break;
-                case R.id.id_channel_grid_item_club://社团活动
-                    ToastUtils.toastShort("社团活动");
-                    break;
-                case R.id.id_channel_grid_item_social://社会实践
-                    ToastUtils.toastShort("社会实践");
-                    break;
-                case R.id.id_channel_grid_item_hundred://百年小微
-                    ToastUtils.toastShort("百年小微");
-                    break;
-                case R.id.id_channel_grid_item_case://成败案例
-                    ToastUtils.toastShort("成败案例");
-                    break;
-                case R.id.id_channel_grid_item_business://创业之路
-                    ToastUtils.toastShort("创业之路");
-                    break;
-            }
-        });
     }
 
     private void initTestData() {
         for (int i = 0; i < 5; i++) {
             HomeModel model = new HomeModel();
-            model.setItem("item" + i);
             mHomeModeList.add(model);
         }
     }
+
 
     @Override
     public void onDestroyView() {

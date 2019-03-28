@@ -8,4 +8,10 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="home_input_tip">请输入关键词</string>
+    <string name="channel_grid_learn">学习交流</string>
+    <string name="channel_grid_club_activity">社团活动</string>
+    <string name="channel_grid_social_practice">社会实践</string>
+    <string name="channel_grid_hundred_year">百年小微</string>
+    <string name="channel_grid_case">成败案例</string>
+    <string name="channel_grid_business">创业之路</string>
 </resources>

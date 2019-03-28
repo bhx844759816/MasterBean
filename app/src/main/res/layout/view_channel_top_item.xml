@@ -1,25 +1,84 @@
 <?xml version="1.0" encoding="utf-8"?>
-<com.bhx.common.ui.widget.GridRadioGroup
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<com.bhx.common.ui.widget.GridRadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/id_channel_grid_group"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    android:padding="10dp"
+    app:horizontalSpacing="10dp"
+    app:numColumns="3"
+    app:verticalSpacing="30dp">
 
-    >
-
-   <RadioButton
-       android:layout_width="wrap_content"
-       android:layout_height="wrap_content"
-       android:text="1111111111111111111111"
-       />
     <RadioButton
+        android:id="@+id/id_channel_grid_item_learn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="1111111111111111111111"
-        />
+        android:button="@null"
+        android:drawableTop="@drawable/drawable_channel_learn_item"
+        android:drawablePadding="10dp"
+        android:gravity="center"
+        android:text="@string/channel_grid_learn"
+        android:textColor="@color/color_channel_grid_item_text_color"
+        android:textSize="@dimen/sp_15" />
+
     <RadioButton
+        android:id="@+id/id_channel_grid_item_club"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="1111111111111111111111"
-        />
+        android:button="@null"
+        android:drawableTop="@drawable/drawable_channel_club_activity_item"
+        android:drawablePadding="10dp"
+        android:gravity="center"
+        android:text="@string/channel_grid_club_activity"
+        android:textColor="@color/color_channel_grid_item_text_color"
+        android:textSize="@dimen/sp_15" />
+
+    <RadioButton
+        android:id="@+id/id_channel_grid_item_social"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:button="@null"
+        android:drawableTop="@drawable/drawable_channel_social_practice_item"
+        android:drawablePadding="10dp"
+        android:gravity="center"
+        android:text="@string/channel_grid_social_practice"
+        android:textColor="@color/color_channel_grid_item_text_color"
+        android:textSize="@dimen/sp_15" />
+
+    <RadioButton
+        android:id="@+id/id_channel_grid_item_hundred"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:button="@null"
+        android:drawableTop="@drawable/drawable_channel_hundred_year_item"
+        android:drawablePadding="10dp"
+        android:gravity="center"
+        android:text="@string/channel_grid_hundred_year"
+        android:textColor="@color/color_channel_grid_item_text_color"
+        android:textSize="@dimen/sp_15" />
+
+    <RadioButton
+        android:id="@+id/id_channel_grid_item_case"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:button="@null"
+        android:drawableTop="@drawable/drawable_channel_case_item"
+        android:drawablePadding="10dp"
+        android:gravity="center"
+        android:text="@string/channel_grid_case"
+        android:textColor="@color/color_channel_grid_item_text_color"
+        android:textSize="@dimen/sp_15" />
+
+    <RadioButton
+        android:id="@+id/id_channel_grid_item_business"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:button="@null"
+        android:drawableTop="@drawable/drawable_channel_business_item"
+        android:drawablePadding="10dp"
+        android:gravity="center"
+        android:text="@string/channel_grid_business"
+        android:textColor="@color/color_channel_grid_item_text_color"
+        android:textSize="@dimen/sp_15" />
 </com.bhx.common.ui.widget.GridRadioGroup>

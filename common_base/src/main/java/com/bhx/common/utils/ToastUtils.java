@@ -24,12 +24,7 @@ public class ToastUtils {
      * 子线程弹出土司
      */
     public static void ioToastShort(final String msg) {
-        mainHandler.post(new Runnable() {
-            @Override
-            public void run() {
-                showToast(msg, Toast.LENGTH_SHORT);
-            }
-        });
+        mainHandler.post(() -> showToast(msg, Toast.LENGTH_SHORT));
     }
 
     /**
@@ -38,36 +33,21 @@ public class ToastUtils {
      * @param resID 文本的资源ID
      */
     public static void ioToastShort(final int resID) {
-        mainHandler.post(new Runnable() {
-            @Override
-            public void run() {
-                showToast(resID, Toast.LENGTH_SHORT);
-            }
-        });
+        mainHandler.post(() -> showToast(resID, Toast.LENGTH_SHORT));
     }
 
     /**
      * 子线程弹出土司
      */
     public static void ioToastLong(final String msg) {
-        mainHandler.post(new Runnable() {
-            @Override
-            public void run() {
-                showToast(msg, Toast.LENGTH_LONG);
-            }
-        });
+        mainHandler.post(() -> showToast(msg, Toast.LENGTH_LONG));
     }
 
     /**
      * 子线程弹出土司
      */
     public static void ioToastLong(final int resId) {
-        mainHandler.post(new Runnable() {
-            @Override
-            public void run() {
-                showToast(resId, Toast.LENGTH_LONG);
-            }
-        });
+        mainHandler.post(() -> showToast(resId, Toast.LENGTH_LONG));
     }
 
     /**
@@ -82,7 +62,7 @@ public class ToastUtils {
     /**
      * 主线程弹出toast
      */
-    public static void toastShort(int  resId) {
+    public static void toastShort(int resId) {
         if (Thread.currentThread() == Looper.getMainLooper().getThread()) {
             showToast(resId, Toast.LENGTH_SHORT);
         }
@@ -130,8 +110,8 @@ public class ToastUtils {
         if (sToast == null) {
             sToast = Toast.makeText(BaseApplication.getContext(), text, duration);
             TextView tv = sToast.getView().findViewById(android.R.id.message);
-            tv.setTextSize(18);
-            sToast.setGravity(Gravity.CENTER, 0, 0);
+            tv.setTextSize(14);
+            sToast.setGravity(Gravity.BOTTOM, 0, 0);
         } else {
             sToast.setText(text);
             sToast.setDuration(duration);

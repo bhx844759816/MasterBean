@@ -12,7 +12,9 @@ import android.widget.FrameLayout;
 
 import com.bhx.common.utils.LogUtils;
 import com.bhx.masterbean.R;
+import com.bhx.masterbean.ui.fragment.ChannelFragment;
 import com.bhx.masterbean.ui.fragment.HomeFragment;
+import com.bhx.masterbean.ui.fragment.SearchFragment;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -28,6 +30,8 @@ public class MainActivity extends AppCompatActivity {
     FrameLayout idFragmentContent;
 
     private Fragment mHomeFragment;
+    private Fragment mChannelFragment;
+    private Fragment mSearchFragment;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,12 +47,13 @@ public class MainActivity extends AppCompatActivity {
             int id = menuItem.getItemId();
             switch (id) {
                 case R.id.item_bottom_home:
-                    LogUtils.i("show home fragment");
                     showHomeFragment();
                     break;
-                case R.id.item_bottom_search:
-                    break;
                 case R.id.item_bottom_channel:
+                    showChannelFragment();
+                    break;
+                case R.id.item_bottom_search:
+                    showSearchFragment();
                     break;
                 case R.id.item_bottom_my:
                     break;
@@ -57,22 +62,55 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-    private void initFragment() {
-        mHomeFragment = new HomeFragment();
-        FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
-        transaction.replace(R.id.id_fragment_content, mHomeFragment);
-        transaction.commit();
-    }
 
     /**
      * 展示首页Fragment
      */
     public void showHomeFragment() {
+        FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+        hideAllFragment(transaction);
         if (mHomeFragment == null) {
             mHomeFragment = new HomeFragment();
+            transaction.add(R.id.id_fragment_content, mHomeFragment);
+        } else {
+            transaction.show(mHomeFragment);
         }
-        FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
-        transaction.replace(R.id.id_fragment_content, mHomeFragment);
         transaction.commit();
+    }
+
+    private void showChannelFragment() {
+        FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+        hideAllFragment(transaction);
+        if (mChannelFragment == null) {
+            mChannelFragment = new ChannelFragment();
+            transaction.add(R.id.id_fragment_content, mChannelFragment);
+        } else {
+            transaction.show(mChannelFragment);
+        }
+        transaction.commit();
+    }
+
+    private void showSearchFragment() {
+        FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+        hideAllFragment(transaction);
+        if (mSearchFragment == null) {
+            mSearchFragment = new SearchFragment();
+            transaction.add(R.id.id_fragment_content, mSearchFragment);
+        } else {
+            transaction.show(mSearchFragment);
+        }
+        transaction.commit();
+    }
+
+    private void hideAllFragment(FragmentTransaction transaction) {
+        if (mHomeFragment != null) {
+            transaction.hide(mHomeFragment);
+        }
+        if (mChannelFragment != null) {
+            transaction.hide(mChannelFragment);
+        }
+        if (mSearchFragment != null) {
+            transaction.hide(mSearchFragment);
+        }
     }
 }
