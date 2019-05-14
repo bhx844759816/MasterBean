@@ -34,5 +34,6 @@ dependencies {
     annotationProcessor thirdLibrarys.butterknifeCompiler
     implementation thirdLibrarys.banner
     implementation thirdLibrarys.banner2
+    implementation 'com.just.agentweb:agentweb:4.0.2'
 
 }

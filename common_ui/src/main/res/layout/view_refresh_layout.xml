@@ -10,10 +10,18 @@
         android:gravity="center">
 
         <ImageView
-            android:id="@+id/id_refresh_arrow"
+            android:id="@+id/id_arrow"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@drawable/view_refresh_arrow" />
+            android:background="@drawable/common_ui_icon_arrow_down_2"
+            android:visibility="visible" />
+
+        <ImageView
+            android:id="@+id/id_refresh"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/common_ui_icon_refresh"
+            android:visibility="gone" />
 
         <TextView
             android:id="@+id/id_refresh_text"

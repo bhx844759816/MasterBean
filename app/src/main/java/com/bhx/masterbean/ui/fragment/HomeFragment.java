@@ -22,10 +22,9 @@ import com.bhx.common.ui.recyclerview.RefreshRecyclerView;
 import com.bhx.common.utils.DensityUtil;
 import com.bhx.masterbean.R;
 import com.bhx.masterbean.adapter.HomeAdapter;
-import com.bhx.masterbean.model.HomeModel;
+import com.bhx.masterbean.model.home.HomeModel;
 import com.bhx.masterbean.ui.SearchActivity;
 import com.bhx.masterbean.utils.SpacesItemDecoration;
-import com.youth.banner.Banner;
 import com.zhouwei.mzbanner.MZBannerView;
 import com.zhouwei.mzbanner.holder.MZHolderCreator;
 import com.zhouwei.mzbanner.holder.MZViewHolder;
@@ -83,6 +82,9 @@ public class HomeFragment extends Fragment {
         mRefreshRecyclerView.setAdapter(new HomeAdapter(mContext, mHomeModeList));
         mRefreshRecyclerView.addRefreshViewCreator(new DefaultRefreshViewCreator());
         mRefreshRecyclerView.addHeaderView(mzBannerView);
+        mRefreshRecyclerView.setOnRefreshListener(() ->
+                new Handler().postDelayed(() ->
+                        mRefreshRecyclerView.onStopRefresh(), 2000));
     }
 
 
@@ -94,12 +96,7 @@ public class HomeFragment extends Fragment {
             mzBannerView.setCanLoop(false);
             mzBannerView.setIndicatorVisible(false);
         }
-        mzBannerView.setPages(mBannerRes, new MZHolderCreator<BannerViewHolder>() {
-            @Override
-            public BannerViewHolder createViewHolder() {
-                return new BannerViewHolder();
-            }
-        });
+        mzBannerView.setPages(mBannerRes, (MZHolderCreator<BannerViewHolder>) () -> new BannerViewHolder());
 
     }
 
@@ -176,7 +173,6 @@ public class HomeFragment extends Fragment {
         mBannerRes.add(R.drawable.banner_test_04);
         for (int i = 0; i < 20; i++) {
             HomeModel model = new HomeModel();
-            model.setItem("item" + i);
             mHomeModeList.add(model);
         }
     }

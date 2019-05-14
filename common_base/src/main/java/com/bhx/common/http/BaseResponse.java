@@ -8,7 +8,7 @@ package com.bhx.common.http;
 public class BaseResponse<T> {
     private T data;
     private int code;
-    private String message;
+    private String msg;
 
     public T getData() {
         return data;
@@ -19,6 +19,6 @@ public class BaseResponse<T> {
     }
 
     public String getMessage() {
-        return message;
+        return msg;
     }
 }

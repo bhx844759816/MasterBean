@@ -130,4 +130,15 @@ public class WrapRecyclerView extends RecyclerView {
         }
     }
 
+    public void addEmptyView(View view){
+        mEmptyView = view;
+    }
+
+    public void addErrorView(View view){
+        mErrorView = view;
+    }
+
+    public void addLoadingView(View view){
+        mLoadingView = view;
+    }
 }

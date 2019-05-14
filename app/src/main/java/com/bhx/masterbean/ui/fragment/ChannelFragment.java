@@ -2,6 +2,7 @@ package com.bhx.masterbean.ui.fragment;
 
 import android.content.Context;
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -9,7 +10,6 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.RadioGroup;
 
 import com.bhx.common.ui.recyclerview.DefaultRefreshViewCreator;
 import com.bhx.common.ui.recyclerview.RefreshRecyclerView;
@@ -18,7 +18,8 @@ import com.bhx.common.utils.DensityUtil;
 import com.bhx.common.utils.ToastUtils;
 import com.bhx.masterbean.R;
 import com.bhx.masterbean.adapter.HomeAdapter;
-import com.bhx.masterbean.model.HomeModel;
+import com.bhx.masterbean.adapter.TestHomeAdapter;
+import com.bhx.masterbean.model.home.HomeModel;
 import com.bhx.masterbean.utils.SpacesItemDecoration;
 
 import java.util.ArrayList;
@@ -66,7 +67,7 @@ public class ChannelFragment extends Fragment {
         initTestData();
         mRecyclerView.setLayoutManager(new LinearLayoutManager(mContext, LinearLayoutManager.VERTICAL, false));
         mRecyclerView.addItemDecoration(new SpacesItemDecoration(DensityUtil.dip2px(mContext, 10)));
-        mRecyclerView.setAdapter(new HomeAdapter(mContext, mHomeModeList));
+        mRecyclerView.setAdapter(new TestHomeAdapter(mContext, mHomeModeList));
         mRecyclerView.addRefreshViewCreator(new DefaultRefreshViewCreator());
         mRecyclerView.addHeaderView(mRadioGroup);
         mRadioGroup.check(R.id.id_channel_grid_item_learn);
@@ -92,12 +93,14 @@ public class ChannelFragment extends Fragment {
                     break;
             }
         });
+        mRecyclerView.setOnRefreshListener(() ->
+                new Handler().postDelayed(() ->
+                        mRecyclerView.onStopRefresh(), 2000));
     }
 
     private void initTestData() {
         for (int i = 0; i < 5; i++) {
             HomeModel model = new HomeModel();
-            model.setItem("item" + i);
             mHomeModeList.add(model);
         }
     }

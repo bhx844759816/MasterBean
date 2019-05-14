@@ -14,4 +14,6 @@
     <string name="channel_grid_hundred_year">百年小微</string>
     <string name="channel_grid_case">成败案例</string>
     <string name="channel_grid_business">创业之路</string>
+    <string name="send_phone_code_retry">重新发送</string>
+
 </resources>

@@ -14,7 +14,11 @@ import retrofit2.Response;
  * Created by Administrator on 2018/2/10.
  */
 public class RxHelper {
-
+    public static <T> ObservableTransformer<T, T> io_main() {
+        return observable -> observable.subscribeOn(Schedulers.io())
+                .unsubscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread());
+    }
 
     public static <T> ObservableTransformer<BaseResponse<T>, T> handleResult() {
         return observable -> observable

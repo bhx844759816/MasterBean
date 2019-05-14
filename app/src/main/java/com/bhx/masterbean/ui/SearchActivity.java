@@ -53,7 +53,7 @@ public class SearchActivity extends AppCompatActivity {
         for (int i = 0; i < mNames.length; i++) {
             TextView view = new TextView(this);
             view.setText(mNames[i]);
-            view.setTextColor(Color.WHITE);
+            view.setTextColor(getResources().getColor(R.color.text_default));
             view.setBackground(getResources().getDrawable(R.drawable.drawable_flow_label));
             mHotLabelFlowLayout.addView(view, lp);
         }
@@ -67,7 +67,7 @@ public class SearchActivity extends AppCompatActivity {
         for (int i = 0; i < mNames_h.length; i++) {
             TextView view = new TextView(this);
             view.setText(mNames_h[i]);
-            view.setTextColor(Color.WHITE);
+            view.setTextColor(getResources().getColor(R.color.text_default));
             view.setBackground(getResources().getDrawable(R.drawable.drawable_flow_label));
             mHotHistoryFlowLayout.addView(view, lp);
         }

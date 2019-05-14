@@ -2,6 +2,7 @@ package com.bhx.masterbean.ui.fragment;
 
 import android.content.Context;
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -15,9 +16,9 @@ import com.bhx.common.ui.recyclerview.RefreshRecyclerView;
 import com.bhx.common.utils.DensityUtil;
 import com.bhx.masterbean.R;
 import com.bhx.masterbean.adapter.HomeAdapter;
-import com.bhx.masterbean.model.HomeModel;
+import com.bhx.masterbean.adapter.TestHomeAdapter;
+import com.bhx.masterbean.model.home.HomeModel;
 import com.bhx.masterbean.utils.DefaultItemDecoration;
-import com.bhx.masterbean.utils.SpacesItemDecoration;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -57,8 +58,11 @@ public class CollectionFragment extends Fragment {
         initTestData();
         mRecyclerView.setLayoutManager(new LinearLayoutManager(mContext, LinearLayoutManager.VERTICAL, false));
         mRecyclerView.addItemDecoration(new DefaultItemDecoration(DensityUtil.dip2px(mContext, 10)));
-        mRecyclerView.setAdapter(new HomeAdapter(mContext, mHomeModeList));
+        mRecyclerView.setAdapter(new TestHomeAdapter(mContext, mHomeModeList));
         mRecyclerView.addRefreshViewCreator(new DefaultRefreshViewCreator());
+        mRecyclerView.setOnRefreshListener(() ->
+                new Handler().postDelayed(() ->
+                        mRecyclerView.onStopRefresh(), 2000));
     }
 
     private void initTestData() {

@@ -27,16 +27,17 @@ public class LoadRefreshRecyclerView extends RefreshRecyclerView {
     private boolean mCurrentDrag = false;
     // 当前的状态
     private int mCurrentLoadStatus;
+
     // 默认状态
     public int LOAD_STATUS_NORMAL = 0x0011;
     // 上拉加载更多状态
-    public static int LOAD_STATUS_PULL_DOWN_REFRESH = 0x0022;
+    public static final int LOAD_STATUS_PULL_DOWN_REFRESH = 0x0022;
     // 松开加载更多状态
-    public static int LOAD_STATUS_LOOSEN_LOADING = 0x0033;
+    public static final int LOAD_STATUS_LOOSEN_LOADING = 0x0033;
     // 正在加载更多状态
-    public int LOAD_STATUS_LOADING = 0x0044;
-
-
+    public static final int LOAD_STATUS_LOADING = 0x0044;
+    // 没有更多数据得状态
+    public static final int LOAD_NO_MORE_DATA = 0x0055;
     public LoadRefreshRecyclerView(@NonNull Context context) {
         super(context);
     }
@@ -116,7 +117,7 @@ public class LoadRefreshRecyclerView extends RefreshRecyclerView {
         switch (e.getAction()) {
             case MotionEvent.ACTION_MOVE:
                 // 如果是在最底部才处理，否则不需要处理
-                if (canScrollDown() || mCurrentLoadStatus == LOAD_STATUS_LOADING) {
+                if (canScrollDown() || mCurrentLoadStatus == LOAD_STATUS_LOADING || mCurrentLoadStatus == LOAD_NO_MORE_DATA) {
                     // 如果没有到达最顶端，也就是说还可以向上滚动就什么都不处理
                     return super.onTouchEvent(e);
                 }
@@ -192,7 +193,7 @@ public class LoadRefreshRecyclerView extends RefreshRecyclerView {
     /**
      * @return Whether it is possible for the child view of this layout to
      * scroll up. Override this if the child view is a custom view.
-     * 判断是不是滚动到了最顶部，这个是从SwipeRefreshLayout里面copy过来的源代码
+     * 判断是不是滚动到了最底部，这个是从SwipeRefreshLayout里面copy过来的源代码
      */
     public boolean canScrollDown() {
         return ViewCompat.canScrollVertically(this, 1);
@@ -209,6 +210,23 @@ public class LoadRefreshRecyclerView extends RefreshRecyclerView {
         }
     }
 
+    /**
+     * 设置没有更多得数据状态了
+     */
+    public void setNoLoadMoreData(){
+        mCurrentLoadStatus = LOAD_NO_MORE_DATA;
+        if (mLoadCreator != null) {
+            mLoadCreator.noLoadMoreData();
+        }
+    }
+
+    /**
+     * 重置加载更多状态
+     */
+    public void resetLoadMoreState(){
+        mCurrentLoadStatus = LOAD_STATUS_NORMAL;
+    }
+
     // 处理加载更多回调监听
     private OnLoadMoreListener mListener;
 
@@ -219,4 +237,6 @@ public class LoadRefreshRecyclerView extends RefreshRecyclerView {
     public interface OnLoadMoreListener {
         void onLoad();
     }
+
+
 }

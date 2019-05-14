@@ -47,7 +47,6 @@ public class TimeLineItemDecoration extends RecyclerView.ItemDecoration {
             int top = child.getTop();
             int bottom = child.getBottom();
             int right = child.getRight();
-
             RecyclerView.LayoutParams params = (RecyclerView.LayoutParams) child.getLayoutParams();
             int bottomMargin = params.bottomMargin;//防止在item根布局中设置marginTop和marginBottom
             int topMargin = params.topMargin;

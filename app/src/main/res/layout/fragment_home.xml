@@ -29,6 +29,7 @@
             tools:text="郑州" />
 
         <TextView
+            android:id="@+id/id_home_search"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
@@ -59,7 +60,7 @@
 
     </RelativeLayout>
 
-    <com.bhx.common.ui.recyclerview.RefreshRecyclerView
+    <com.bhx.common.ui.recyclerview.LoadRefreshRecyclerView
         android:id="@+id/id_refresh_recyclerView"
         android:layout_width="match_parent"
         android:layout_height="0dp"

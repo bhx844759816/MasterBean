@@ -21,16 +21,19 @@ public abstract class CommonAdapter<T> extends RecyclerView.Adapter<ViewHolder> 
         this.mDatas = datas;
     }
 
+
+
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int viewType) {
-        View view = mInflater.inflate(getLayoutId(), viewGroup,false);
+        View view = mInflater.inflate(getLayoutId(), viewGroup, false);
         return new ViewHolder(view);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull ViewHolder viewHolder, int position) {
+    public void onBindViewHolder(@NonNull ViewHolder viewHolder, final int position) {
         convert(viewHolder, mDatas.get(position), position);
+
     }
 
     @Override

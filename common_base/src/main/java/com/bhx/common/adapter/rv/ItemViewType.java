@@ -12,7 +12,6 @@ public interface ItemViewType<T> {
      *
      * @return
      */
-    @LayoutRes
     int getItemViewLayoutId();
 
     /**

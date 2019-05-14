@@ -72,11 +72,19 @@
             android:textColor="@color/color_channel_grid_item_text_color"
             android:textSize="@dimen/sp_15" />
     </RadioGroup>
-
+    <ImageView
+        android:id="@+id/id_view_line"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/id_search_radioGroup"
+        android:background="@drawable/icon_view_line"
+        />
     <android.support.v4.view.ViewPager
         android:id="@+id/id_search_viewpager"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/id_search_radioGroup" />
+        app:layout_constraintTop_toBottomOf="@id/id_view_line" />
 </android.support.constraint.ConstraintLayout>

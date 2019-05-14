@@ -32,4 +32,9 @@ public abstract class LoadViewCreator {
      */
     public abstract void onStopLoad();
 
+    /**
+     * 没有更多数据
+     */
+    public abstract void noLoadMoreData();
+
 }

@@ -12,8 +12,8 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.bhx.masterbean.R;
-import com.bhx.masterbean.adapter.WorkBeanLevelAdapter;
-import com.bhx.masterbean.model.WorkBeanLevelModel;
+import com.bhx.masterbean.adapter.WorkerBeanLevelAdapter;
+import com.bhx.masterbean.model.WorkerBeanLevelModel;
 import com.bhx.masterbean.utils.TimeLineItemDecoration;
 
 import java.util.ArrayList;
@@ -32,8 +32,8 @@ public class WorkBeanLevelFragment extends Fragment {
     RecyclerView mRecyclerView;
     Unbinder unbinder;
     private Context mContext;
-    private WorkBeanLevelAdapter mAdapter;
-    private List<WorkBeanLevelModel> mWorkerBeanList;
+    private WorkerBeanLevelAdapter mAdapter;
+    private List<WorkerBeanLevelModel> mWorkerBeanList;
 
     @Override
     public void onAttach(Context context) {
@@ -60,14 +60,14 @@ public class WorkBeanLevelFragment extends Fragment {
         mRecyclerView.addItemDecoration(new TimeLineItemDecoration());
         mWorkerBeanList = new ArrayList<>();
         initTestData();
-        mAdapter = new WorkBeanLevelAdapter(mContext, mWorkerBeanList);
+        mAdapter = new WorkerBeanLevelAdapter(mContext, mWorkerBeanList);
         mRecyclerView.setAdapter(mAdapter);
 
     }
 
     private void initTestData() {
         for (int i = 0; i < 10; i++) {
-            mWorkerBeanList.add(new WorkBeanLevelModel());
+            mWorkerBeanList.add(new WorkerBeanLevelModel());
         }
     }
 

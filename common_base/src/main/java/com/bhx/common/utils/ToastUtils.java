@@ -111,7 +111,7 @@ public class ToastUtils {
             sToast = Toast.makeText(BaseApplication.getContext(), text, duration);
             TextView tv = sToast.getView().findViewById(android.R.id.message);
             tv.setTextSize(14);
-            sToast.setGravity(Gravity.BOTTOM, 0, 0);
+            sToast.setGravity(Gravity.BOTTOM, 0, 30);
         } else {
             sToast.setText(text);
             sToast.setDuration(duration);

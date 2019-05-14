@@ -39,6 +39,7 @@ dependencies {
     api supportLibrarys.constraintLayout
     api supportLibrarys.supportDesign
 
+    api thirdLibrarys.okHttp
     api thirdLibrarys.retrofitRunntime
     api thirdLibrarys.retrofitConvert
     api thirdLibrarys.retrofitAdapter
@@ -47,6 +48,7 @@ dependencies {
     api thirdLibrarys.logger
     api thirdLibrarys.rxlifecycle
     api thirdLibrarys.glide
-
+    api thirdLibrarys.lifecycle_extensions
+    annotationProcessor  thirdLibrarys.lifecycle_compiler
 
 }

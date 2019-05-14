@@ -1,33 +1,54 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="120dp"
+    android:layout_height="150dp"
     android:background="@color/white"
     app:cardCornerRadius="10dp"
-    app:cardElevation="2dp">
+
+    app:cardElevation="0dp">
 
     <android.support.constraint.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="120dp">
+        android:layout_height="150dp">
 
         <TextView
             android:id="@+id/id_home_item_title"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_margin="10dp"
             android:text="别以为读了大学你就不是文盲"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginEnd="10dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toLeftOf="@id/id_home_item_img"
+            android:layout_margin="10dp"
             android:textColor="@color/topBar_background"
             android:textSize="@dimen/home_item_title_text_size"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+             />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="10dp"
+            android:ellipsize="end"
+            android:maxEms="16"
+            android:maxLines="2"
+            android:visibility="gone"
+            android:text="我是内容我我是内容我我是内容我我是内容我是内容我是内容我是内容我是内容我是内容我是内容我是内容我是内容我是内容我是内容我是内容我是内容我 "
+            android:textColor="@color/text_default"
+            android:textSize="@dimen/sp_13"
+            app:layout_constraintLeft_toLeftOf="@id/id_home_item_title"
+
+            app:layout_constraintTop_toBottomOf="@id/id_home_item_title" />
 
         <ImageView
             android:id="@+id/id_home_item_img"
-            android:layout_width="100dp"
+            android:layout_width="120dp"
             android:layout_height="match_parent"
-            android:layout_margin="5dp"
             android:background="@drawable/test_home_item_img"
+            android:scaleType="centerCrop"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -35,43 +56,40 @@
         <com.bhx.common.ui.widget.FlowLayout
             android:id="@+id/id_home_item_label"
             android:layout_width="0dp"
+            android:layout_marginEnd="10dp"
             android:layout_height="wrap_content"
+            app:layout_constraintBottom_toTopOf="@id/id_home_item_good_num"
             app:layout_constraintLeft_toLeftOf="@id/id_home_item_title"
-            app:layout_constraintRight_toLeftOf="@id/id_home_item_img"
-            app:layout_constraintTop_toBottomOf="@id/id_home_item_title">
-
+            app:layout_constraintRight_toLeftOf="@id/id_home_item_img">
+           <TextView
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:textSize="10sp"
+               android:text="成长"
+               android:layout_margin="5dp"
+               android:background="@drawable/drawable_flow_label"
+               android:padding="5dp"
+               />
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:background="@drawable/drawable_flow_empty_label"
+                android:textSize="10sp"
+                android:text="成长快乐"
+                android:layout_margin="5dp"
+                android:background="@drawable/drawable_flow_label"
                 android:padding="5dp"
-                android:text="欧美影视"
-                android:textColor="@color/text_gray"
-                android:textSize="8dp" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:layout_marginLeft="8dp"
-                android:background="@drawable/drawable_flow_empty_label"
-                android:padding="5dp"
-                android:text="韩国电影"
-                android:textColor="@color/text_gray"
-                android:textSize="8dp" />
-
+                />
         </com.bhx.common.ui.widget.FlowLayout>
 
         <TextView
             android:id="@+id/id_home_item_good_num"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_margin="10dp"
+            android:layout_marginBottom="5dp"
+            android:layout_marginLeft="10dp"
             android:drawableLeft="@drawable/icon_home_item_good"
             android:drawablePadding="5dp"
             android:gravity="center_vertical"
-            android:text="10"
             android:textColor="@color/home_small_text_color"
             android:textSize="@dimen/home_item_small_text_size"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -82,10 +100,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="30dp"
-            android:drawableLeft="@drawable/icon_home_item_eye"
+            android:drawableLeft="@drawable/icon_home_item_eye_open"
             android:drawablePadding="5dp"
             android:gravity="center_vertical"
-            android:text="8"
             android:textColor="@color/home_small_text_color"
             android:textSize="@dimen/home_item_small_text_size"
             app:layout_constraintBottom_toBottomOf="@+id/id_home_item_good_num"

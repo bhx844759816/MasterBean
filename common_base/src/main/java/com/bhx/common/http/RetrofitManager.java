@@ -1,31 +1,11 @@
 package com.bhx.common.http;
 
-import com.bhx.common.Constants;
+import java.util.concurrent.TimeUnit;
 
-import java.io.File;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-
-import io.reactivex.Observable;
-import io.reactivex.android.schedulers.AndroidSchedulers;
-import io.reactivex.schedulers.Schedulers;
-import okhttp3.MediaType;
-import okhttp3.MultipartBody;
 import okhttp3.OkHttpClient;
-import okhttp3.RequestBody;
-import okhttp3.ResponseBody;
 import retrofit2.Retrofit;
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory;
 import retrofit2.converter.gson.GsonConverterFactory;
-import retrofit2.http.GET;
-import retrofit2.http.Multipart;
-import retrofit2.http.POST;
-import retrofit2.http.Part;
-import retrofit2.http.PartMap;
-import retrofit2.http.Path;
-import retrofit2.http.Streaming;
-import retrofit2.http.Url;
 
 /**
  * Retrofit单例获取ApiService类
@@ -33,13 +13,12 @@ import retrofit2.http.Url;
 public class RetrofitManager {
 
     private static volatile RetrofitManager INSTANCE;
-    private static final Object lock = new Object();
 
     private Retrofit retrofit;//Retrofit对象
 
     public static RetrofitManager getInstance() {
         if (INSTANCE == null) {
-            synchronized (lock) {
+            synchronized (RetrofitManager.class) {
                 if (INSTANCE == null) {
                     INSTANCE = new RetrofitManager();
                 }
@@ -51,15 +30,18 @@ public class RetrofitManager {
     /**
      * 初始化Retrofit
      */
-    public void init() {
+    public void init(String baseUrl) {
         OkHttpClient client = new OkHttpClient.Builder()
+                .connectTimeout(10, TimeUnit.SECONDS)
+                .writeTimeout(10, TimeUnit.SECONDS)
+                .readTimeout(10, TimeUnit.SECONDS)
                 .addInterceptor(new LoggingInterceptor())
                 .build();
         retrofit = new Retrofit.Builder()
-                .baseUrl(Constants.BASE_URL)
-                .addConverterFactory(GsonConverterFactory.create())
-                .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
+                .baseUrl(baseUrl)
                 .client(client)
+                .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
+                .addConverterFactory(GsonConverterFactory.create())
                 .build();
     }
 

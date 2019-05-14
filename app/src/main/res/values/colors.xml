@@ -1,19 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#99013453</color>
-    <color name="colorPrimaryDark">#013453</color>
-    <color name="colorAccent">#66013453</color>
+    <color name="colorPrimary">#00334e</color>
+    <color name="colorPrimaryDark">#00334e</color>
+    <color name="colorAccent">#8000334e</color>
 
+    <color name="worker_bean_record_text_color">#2f596e</color>
+    <color name="worker_bean_rank_text_color">#2f596e</color>
+    <color name="my_time_color">#eb6100</color>
+    <color name="my_vip_bg_color">#009944</color>
     <color name="tab_text_checked">#ED6A2C</color>
     <color name="tab_text_default">#757575</color>
     <color name="windowBackground">#f6f6f6</color>
     <color name="bottom_navigation_background">#f6f6f6</color>
-    <color name="topBar_background">#013453</color>
+    <color name="topBar_background">#00334e</color>
     <color name="white">#ffffff</color>
-    <color name="EditText_Hint_Color">#707070</color>
+    <color name="view_line">#d5d5d5</color>
+    <color name="editText_hint_color">#707070</color>
     <color name="text_gray">#707070</color>
     <color name="text_default">#151515</color>
     <color name="gray_shallow">#f0f0f0</color>
+    <color name="follow_item_bg_color">#3170dd</color>
     <color name="home_small_text_color">#1b2d36</color>
+    <color name="label_text_color_01">#f8eceb</color>
+    <color name="label_text_color_02">#f0f8e4</color>
+    <color name="label_text_color_03">#f0f7ea</color>
+    <color name="label_text_color_04">#e8f7f5</color>
 
 </resources>

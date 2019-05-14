@@ -1,0 +1,294 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:id="@+id/id_my_topBar"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/topBar_height"
+        android:background="@color/topBar_background"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="个人中心"
+            android:textColor="@color/white"
+            android:textSize="@dimen/topBar_title_size" />
+    </RelativeLayout>
+
+    <android.support.v4.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/id_my_topBar">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/id_my_head_cardView"
+                android:layout_width="match_parent"
+                android:layout_height="120dp"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="15dp"
+                android:background="@color/white"
+                app:cardElevation="2dp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/id_my_topBar">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:id="@+id/id_my_head_img"
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:layout_margin="10dp"
+                        android:background="@drawable/test_head_img_2" />
+
+                    <TextView
+                        android:id="@+id/id_my_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:layout_toRightOf="@id/id_my_head_img"
+                        android:text="大华"
+                        android:textColor="@color/text_default"
+                        android:textSize="@dimen/sp_16" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/id_my_name"
+                        android:layout_marginStart="10dp"
+                        android:layout_toEndOf="@id/id_my_head_img"
+                        android:background="@drawable/drawable_my_time_bg"
+                        android:gravity="center"
+                        android:paddingStart="10dp"
+                        android:paddingEnd="10dp"
+                        android:text="2019-7-13  到期"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/sp_13" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginEnd="10dp"
+                        android:background="@drawable/drawable_my_vip_bg"
+                        android:gravity="center"
+                        android:padding="10dp"
+                        android:text="成为会员"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/sp_13" />
+                </RelativeLayout>
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/id_my_second_cardView"
+                android:layout_width="match_parent"
+                android:layout_height="120dp"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="15dp"
+                android:background="@color/white"
+                app:cardElevation="2dp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/id_my_head_cardView">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/id_my_foot"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:drawableTop="@drawable/icon_my_foot"
+                        android:gravity="center"
+                        android:paddingTop="30dp"
+                        android:text="我的足迹"
+                        android:textColor="@color/text_default"
+                        android:textSize="@dimen/sp_15" />
+
+                    <TextView
+                        android:id="@+id/id_my_extension"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:drawableTop="@drawable/icon_extension"
+                        android:gravity="center"
+                        android:paddingTop="30dp"
+                        android:text="我的推广"
+                        android:textColor="@color/text_default"
+                        android:textSize="@dimen/sp_15" />
+
+                    <TextView
+                        android:id="@+id/id_my_wallet"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:drawableTop="@drawable/icon_wallet"
+                        android:gravity="center"
+                        android:paddingTop="30dp"
+                        android:text="我的收支"
+                        android:textColor="@color/text_default"
+                        android:textSize="@dimen/sp_15" />
+
+                    <TextView
+                        android:id="@+id/id_my_attestation"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:drawableTop="@drawable/icon_attestation"
+                        android:gravity="center"
+                        android:paddingTop="30dp"
+                        android:text="实名认证"
+                        android:textColor="@color/text_default"
+                        android:textSize="@dimen/sp_15" />
+                </LinearLayout>
+            </android.support.v7.widget.CardView>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:background="@color/white"
+                android:orientation="vertical"
+                app:layout_constraintTop_toBottomOf="@id/id_my_second_cardView">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="10dp"
+                        android:drawableLeft="@drawable/icon_my_info"
+                        android:drawablePadding="20dp"
+                        android:gravity="center"
+                        android:text="个人资料"
+                        android:textColor="@color/text_default"
+                        android:textSize="@dimen/sp_16" />
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentBottom="true"
+                        android:background="@drawable/icon_view_line" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="10dp"
+                        android:drawableLeft="@drawable/icon_my_feedback"
+                        android:drawablePadding="20dp"
+                        android:gravity="center"
+                        android:text="意见反馈"
+                        android:textColor="@color/text_default"
+                        android:textSize="@dimen/sp_16" />
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentBottom="true"
+                        android:background="@drawable/icon_view_line" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="10dp"
+                        android:drawableLeft="@drawable/icon_my_check_update"
+                        android:drawablePadding="20dp"
+                        android:gravity="center"
+                        android:text="个人资料"
+                        android:textColor="@color/text_default"
+                        android:textSize="@dimen/sp_16" />
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentBottom="true"
+                        android:background="@drawable/icon_view_line" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="10dp"
+                        android:drawableLeft="@drawable/icon_my_about"
+                        android:drawablePadding="20dp"
+                        android:gravity="center"
+                        android:text="关于我们"
+                        android:textColor="@color/text_default"
+                        android:textSize="@dimen/sp_16" />
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentBottom="true"
+                        android:background="@drawable/icon_view_line" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="10dp"
+                        android:drawableLeft="@drawable/icon_my_logout"
+                        android:drawablePadding="20dp"
+                        android:gravity="center"
+                        android:text="退出登陆"
+                        android:textColor="@color/text_default"
+                        android:textSize="@dimen/sp_16" />
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentBottom="true"
+                        android:background="@drawable/icon_view_line" />
+                </RelativeLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </android.support.v4.widget.NestedScrollView>
+
+</android.support.constraint.ConstraintLayout>

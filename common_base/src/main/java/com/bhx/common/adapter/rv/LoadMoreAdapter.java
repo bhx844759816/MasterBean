@@ -14,6 +14,7 @@ public class LoadMoreAdapter<T> extends MultiItemTypeAdapter<T> {
     public final int LOADING_END = 3;
 
     public LoadMoreAdapter(Context context) {
+
         super(context);
         //添加底部加载更多得布局
         addItemViewType(new ItemViewType<T>() {

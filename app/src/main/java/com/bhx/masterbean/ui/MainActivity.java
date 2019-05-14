@@ -1,19 +1,16 @@
 package com.bhx.masterbean.ui;
 
 import android.os.Bundle;
-import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
-import android.view.MenuItem;
 import android.widget.FrameLayout;
 
-import com.bhx.common.utils.LogUtils;
 import com.bhx.masterbean.R;
 import com.bhx.masterbean.ui.fragment.ChannelFragment;
-import com.bhx.masterbean.ui.fragment.HomeFragment;
+import com.bhx.masterbean.ui.fragment.HomeFragment2;
+import com.bhx.masterbean.ui.fragment.MyFragment;
 import com.bhx.masterbean.ui.fragment.SearchFragment;
 
 import butterknife.BindView;
@@ -32,6 +29,7 @@ public class MainActivity extends AppCompatActivity {
     private Fragment mHomeFragment;
     private Fragment mChannelFragment;
     private Fragment mSearchFragment;
+    private Fragment myFragment;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -56,12 +54,12 @@ public class MainActivity extends AppCompatActivity {
                     showSearchFragment();
                     break;
                 case R.id.item_bottom_my:
+                    showMyFragment();
                     break;
             }
             return true;
         });
     }
-
 
     /**
      * 展示首页Fragment
@@ -70,7 +68,7 @@ public class MainActivity extends AppCompatActivity {
         FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
         hideAllFragment(transaction);
         if (mHomeFragment == null) {
-            mHomeFragment = new HomeFragment();
+            mHomeFragment = new HomeFragment2();
             transaction.add(R.id.id_fragment_content, mHomeFragment);
         } else {
             transaction.show(mHomeFragment);
@@ -102,6 +100,19 @@ public class MainActivity extends AppCompatActivity {
         transaction.commit();
     }
 
+    private void showMyFragment() {
+        FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+        hideAllFragment(transaction);
+        if (myFragment == null) {
+            myFragment = new MyFragment();
+            transaction.add(R.id.id_fragment_content, myFragment);
+        } else {
+            transaction.show(myFragment);
+        }
+        transaction.commit();
+    }
+
+
     private void hideAllFragment(FragmentTransaction transaction) {
         if (mHomeFragment != null) {
             transaction.hide(mHomeFragment);
@@ -111,6 +122,9 @@ public class MainActivity extends AppCompatActivity {
         }
         if (mSearchFragment != null) {
             transaction.hide(mSearchFragment);
+        }
+        if (myFragment != null) {
+            transaction.hide(myFragment);
         }
     }
 }

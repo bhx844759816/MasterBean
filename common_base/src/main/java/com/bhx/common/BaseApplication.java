@@ -17,8 +17,6 @@ public class BaseApplication extends Application {
         super.onCreate();
         //获取全局上下文
         applicationContext = getApplicationContext();
-        //初始化Retrofit
-        RetrofitManager.getInstance().init();
         //初始化Log日志
         LogUtils.init();
     }

@@ -44,11 +44,6 @@ public class SearchFragment extends Fragment {
     RadioButton mSearchFollow;
     private List<Fragment> mFragmentList;
 
-    @Override
-    public void onCreate(@Nullable Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        LogUtils.i("SearchFragment onCreate");
-    }
 
     @Nullable
     @Override
@@ -56,7 +51,6 @@ public class SearchFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_search, container, false);
         unbinder = ButterKnife.bind(this, view);
         initView();
-        LogUtils.i("SearchFragment onCreateView");
         return view;
     }
 

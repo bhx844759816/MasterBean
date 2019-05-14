@@ -1,3 +1,5 @@
+ext.deps = [:]
+
 def versions = [:]
 versions.android_gradle_plugin = "3.3.0"
 versions.applicationId = "com.bhx.masterbean"
@@ -27,6 +29,9 @@ versions.butterknife = "8.6.0"
 versions.banner = "1.4.10"
 versions.banner2 = "2.0.2"
 versions.glide = "3.7.0"
+versions.lifecycle = "1.1.1"
+versions.okhttp = "3.12.0"
+versions.okhttp_logging_interceptor = "3.10.0"
 
 ext.version = versions
 ext.supportLibrarys = [
@@ -42,16 +47,20 @@ ext.supportLibrarys = [
 ]
 
 ext.thirdLibrarys = [
-        retrofitRunntime   : "com.squareup.retrofit2:retrofit:$versions.retrofit",
-        retrofitConvert    : "com.squareup.retrofit2:converter-gson:$versions.retrofit",
-        retrofitAdapter    : "com.squareup.retrofit2:adapter-rxjava2:$versions.retrofit",
-        rxJava             : "io.reactivex.rxjava2:rxjava:$versions.rxJava",
-        rxAndroid          : "io.reactivex.rxjava2:rxandroid:$versions.rx_android",
-        logger             : "com.orhanobut:logger:$versions.logger",
-        rxlifecycle        : "com.trello.rxlifecycle2:rxlifecycle-components:$versions.rxlifecycle",
-        butterknife        : "com.jakewharton:butterknife:$versions.butterknife",
-        butterknifeCompiler: "com.jakewharton:butterknife-compiler:$versions.butterknife",
-        banner             : "com.youth.banner:banner:$versions.banner", // 源码地址 [https://github.com/youth5201314/banner]
-        banner2            : "com.github.pinguo-zhouwei:MZBannerView:v$versions.banner2", // 源码地址 [https://github.com/youth5201314/banner]
-        glide              : "com.github.bumptech.glide:glide:$versions.glide"
+        retrofitRunntime          : "com.squareup.retrofit2:retrofit:$versions.retrofit",
+        retrofitConvert           : "com.squareup.retrofit2:converter-gson:$versions.retrofit",
+        retrofitAdapter           : "com.squareup.retrofit2:adapter-rxjava2:$versions.retrofit",
+        rxJava                    : "io.reactivex.rxjava2:rxjava:$versions.rxJava",
+        rxAndroid                 : "io.reactivex.rxjava2:rxandroid:$versions.rx_android",
+        logger                    : "com.orhanobut:logger:$versions.logger",
+        rxlifecycle               : "com.trello.rxlifecycle2:rxlifecycle-components:$versions.rxlifecycle",
+        butterknife               : "com.jakewharton:butterknife:$versions.butterknife",
+        butterknifeCompiler       : "com.jakewharton:butterknife-compiler:$versions.butterknife",
+        banner                    : "com.youth.banner:banner:$versions.banner", // 源码地址 [https://github.com/youth5201314/banner]
+        banner2                   : "com.github.pinguo-zhouwei:MZBannerView:v$versions.banner2", // 源码地址 [https://github.com/youth5201314/banner]
+        glide                     : "com.github.bumptech.glide:glide:$versions.glide",
+        lifecycle_extensions      : "android.arch.lifecycle:extensions:$versions.lifecycle",
+        lifecycle_compiler        : "android.arch.lifecycle:compiler:$versions.lifecycle",
+        okHttp                    : "com.squareup.okhttp3:okhttp:$versions.okhttp",
+        okHttp_logging_interceptor: "com.squareup.okhttp3:logging-interceptor:$versions.okhttp_logging_interceptor "
 ]
